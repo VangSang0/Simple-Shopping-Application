@@ -6,3 +6,8 @@ app = Flask(__name__)
 def home():
     
     return render_template('index.html')
+
+@app.get('/cart')
+def cart():
+
+    return render_template('cart.html')

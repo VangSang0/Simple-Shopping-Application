@@ -1,0 +1,67 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.heading{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    background-color: rgba(0, 147, 233, 0.75);
+    height: 3rem;
+    align-items: center;
+}   
+
+.heading h3 a{
+    font-size: 1.5rem;
+    font-weight: none;
+    text-decoration: none;
+    color: white;
+}
+
+.heading h3{
+    margin: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.heading h3:hover{
+    text-decoration: underline white;
+    font-weight: bold;
+    border-radius: 3px;
+    background-color: rgba(0, 147, 233, 1);
+}
+
+.container{
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 4rem;
+}
+
+.sidenav {
+    display: flex;
+    flex-direction: column;
+    padding-left: 1rem;
+
+    height: calc(100% - 3rem); /* Adjusted height to fit the remaining space */
+    width: 5rem; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1000; 
+    top: 4rem;
+    left: 0;
+    background-color: gray; 
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+.sidenav a{
+    color: black;
+    text-decoration: none;
+    margin-top: 4rem;
+}
+
+
+
+.shopping-content{
+    margin-left: 6.5rem;
+}
