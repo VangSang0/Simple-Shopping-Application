@@ -14,6 +14,7 @@
 
     <div class="container">
         <div class="sidenav">
+            <h4>Navigation</h4>
             <a href="#computer-heading">Computers</a>
             <a href="#tools-heading">Tool Sets</a>
             <a href="#accessories-heading">Accessories</a>
@@ -21,106 +22,137 @@
         <div class="shopping-content">
             <h1 class="welcome">Welcome to Nexus Online Shopping</h1>
             <div class="tech">
-                <h3 id="computer-heading">Computers</h3>
-                <table class="computers">
-                    <tr>
-                        <th>
-                            <ul>
-                                <li><img src="static/images/computer1.jpg" alt="Computer1"></li>
-                                <li>
-                                    <p>This model is a simple design yet effective for your gaming needs. It is one of our more budget friendly builds! This is recommended to the casual gamers</p>
-                                </li>
-                                <li><button>$849.99</button></li>
-                            </ul>
-                        </th>
-                        <th>
-                            <ul>
-                                <li><img src="static/images/computer2.jpg" alt="Computer2"></li>
-                                <li>
-                                    <p>This model is our mid-tier gaming setup as it will take on medium load games at higher graphics. This is for those who are looking into playing triple A games.</p>
-                                </li>
-                                <li><button>$1199.99</button></li>
-                            </ul>
-                        </th>
-                        <th>
-                            <ul>
-                                <li><img src="static/images/computer3.jpg" alt="Computer3"></li>
-                                <li>
-                                    <p>This PC is for those individuals who are "hardcore gamers", gaining an edge without worrying about heating issues. It will run all games at high graphics without a problem!</p>
-                                </li>
-                                <li><button>$1599.99</button></li>
-                            </ul>
-                        </th>
-                    </tr>
-                </table>
-    
-                <h3 id="tools-heading">Tools for your Computer</h3>
-                <table class="tools">
-                    <tr>
-                        <th>
-                            <ul>
-                                <li><img src="static/images/tools1.jpg" alt="tools1"></li>
-                                <li>
-                                    <p>This toolkit is all you need for when you're building a pc!</p>
-                                </li>
-                                <li><button>$7.99</button></li>
-                            </ul>
-                        </th>
-                        <th>
-                            <ul>
-                                <li><img src="static/images/tools2.jpg" alt="tools2"></li>
-                                <li>
-                                    <p>This toolkit is good for those who work on pc repairs and pc building! This is also a good option for working on many other devices like a laptop or console</p>
-                                </li>
-                                <li><button>$35.99</button></li>
-                                
-                            </ul>
-                        </th>
-                        <th>
-                            <ul>
-                                <li><img src="static/images/tools3.jpg" alt="tools3"></li>
-                                <li>
-                                    <p>This toolkit includes all the screwheads you will need and an electronic screwdrive!</p>
-                                </li>
-                                <li><button>$67.99</button></li>
-    
-                            </ul>
-                        </th>
-                    </tr>
-                </table>
-    
-                <h3 id="accessories-heading">Computer Accessories</h3>
-                <table class="accessories">
-                    <tr>
-                        <th>
-                            <ul>
-                                <li><img src="static/images/keyboard.jpg" alt="keyboard"></li>
-                                <li>
-                                    <p>This Keychron k2 keyboard will pair well with any pc. It can be used for gaming or even programming!</p>
-                                </li>
-                                <li><button>$74.99</button></li>
-                            </ul>
-                        </th>
-                        <th>
-                            <ul>
-                                <li><img src="static/images/mouse.jpg" alt="mouse"></li>
-                                <li>
-                                    <p>This sleek mouse will pair well with your needs as a pc gamer and office work!</p>
-                                </li>
-                                <li><button>$21.99</button></li>
-                            </ul>
-                        </th>
-                        <th>
-                            <ul>
-                                <li><img src="static/images/mousepad.jpg" alt="mousepad"></li>
-                                <li>
-                                    <p>This mouse pad will fill up your desk and be as smooth as ever when either wiffing skillshots in league or flicking onto an enemy in CSGO!</p>
-                                </li>
-                                <li><button>$14.99</button></li>
-                            </ul>
-                        </th>
-                    </tr>
-                </table>
+
+                <form action="/add_to_cart" method="POST">
+                    <h3 id="computer-heading">Computers</h3>
+                        <table class="computers">
+                            <tr>
+                                <th>
+                                    <ul>
+                                        <li><img src="static/images/computer1.jpg" alt="Computer1"></li>
+                                        <li>
+                                            <h4>Beginning PC</h4>
+                                        </li>
+                                        <li>
+                                            <p>This model is a simple design yet effective for your gaming needs. It is one of our more budget friendly builds! This is recommended to the casual gamers</p>
+                                        </li>
+                                        <li><button name="product_name" value="Beginning PC">$849.99</button></li>
+                                    </ul>
+                                </th>
+                                <th>
+                                    <ul>
+                                        <li><img src="static/images/computer2.jpg" alt="Computer2"></li>
+                                        <li>
+                                            <h4>Mid-Tier PC</h4>
+                                        </li>
+                                        <li>
+                                            <p>This model is our mid-tier gaming setup as it will take on medium load games at higher graphics. This is for those who are looking into playing triple A games.</p>
+                                        </li>
+                                        <li><button name="product_name" value="Mid-Tier PC">$1199.99</button></li>
+                                    </ul>
+                                </th>
+                                <th>
+                                    <ul>
+                                        <li><img src="static/images/computer3.jpg" alt="Computer3"></li>
+                                        <li>
+                                            <h4>High-End PC</h4>
+                                        </li>
+                                        <li>
+                                            <p>This PC is for those individuals who are "hardcore gamers", gaining an edge without worrying about heating issues. It will run all games at high graphics without a problem!</p>
+                                        </li>
+                                        <li><button name="product_name" value="High-End PC">$1599.99</button></li>
+                                    </ul>
+                                </th>
+                            </tr>
+                        </table>
+
+                    <h3 id="tools-heading">Tools for your Computer</h3>
+                        <table class="tools">
+                            <tr>
+                                <th>
+                                    <ul>
+                                        <li><img src="static/images/tools1.jpg" alt="tools1"></li>
+                                        <li>
+                                            <h4>Kevin's Tool-Kit</h4>
+                                        </li>
+                                        <li>
+                                            <p>This toolkit is all you need for when you're building a pc!</p>
+                                        </li>
+                                        <li><button name="product_name" value="Kevins Tool-Kit">$7.99</button></li>
+                                    </ul>
+                                </th>
+                                <th>
+                                    <ul>
+                                        <li><img src="static/images/tools2.jpg" alt="tools2"></li>
+                                        <li>
+                                            <h4>Larry's Tool-Kit</h4>
+                                        </li>
+                                        <li>
+                                            <p>This toolkit is good for those who work on pc repairs and pc building! This is also a good option for working on many other devices like a laptop or console</p>
+                                        </li>
+                                        <li><button name="product_name" value="Larrys Tool-Kit">$35.99</button></li>
+                                    </ul>
+                                </th>
+                                <th>
+                                    <ul>
+                                        <li><img src="static/images/tools3.jpg" alt="tools3"></li>
+                                        <li>
+                                            <h4>Fanttik Tool Set</h4>
+                                        </li>
+                                        <li>
+                                            <p>This toolkit includes all the screwheads you will need and an electronic screwdrive!</p>
+                                        </li>
+                                        <li><button name="product_name" value="Fanttik Tool Set">$67.99</button></li>
+                                    </ul>
+                                </th>
+                            </tr>
+                        </table>
+
+
+                    <h3 id="accessories-heading">Computer Accessories</h3>
+                        <table class="accessories">
+                            <tr>
+                                <th>
+                                    <ul>
+                                        <li><img src="static/images/keyboard.jpg" alt="keyboard"></li>
+                                        <li>
+                                            <h4>Keychron K2</h4>
+                                        </li>
+                                        <li>
+                                            <p>This Keychron k2 keyboard will pair well with any pc. It can be used for gaming or even programming!</p>
+                                        </li>
+                                        <li><button name="product_name" value="Keychron K2">$74.99</button></li>
+                                    </ul>
+                                </th>
+                                <th>
+                                    <ul>
+                                        <li><img src="static/images/mouse.jpg" alt="mouse"></li>
+                                        <li>
+                                            <h4>Razor Mouse</h4>
+                                        </li>
+                                        <li>
+                                            <p>This sleek mouse will pair well with your needs as a pc gamer and office work!</p>
+                                        </li>
+                                        <li><button name="product_name" value="Razor Mouse">$21.99</button></li>
+                                    </ul>
+                                </th>
+                                <th>
+                                    <ul>
+                                        <li><img src="static/images/mousepad.jpg" alt="mousepad"></li>
+                                        <li>
+                                            <h4>Classic mousepad</h4>
+                                        </li>
+                                        <li>
+                                            <p>This mouse pad will fill up your desk and be as smooth as ever when either wiffing skillshots in league or flicking onto an enemy in CSGO!</p>
+                                        </li>
+                                        <li><button name="product_name" value="Classic mousepad">$14.99</button></li>
+                                    </ul>
+                                </th>
+                            </tr>
+                        </table>
+                </form>
+
+                
             </div>
         </div>
     </div>
