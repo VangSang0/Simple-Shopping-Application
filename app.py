@@ -1,6 +1,7 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, session
 
 app = Flask(__name__)
+app.secret_key = 'your_secret_key'
 
 items = {
     'Beginning PC' : 849.99,
@@ -28,15 +29,17 @@ def home():
 
 @app.get('/cart')
 def cart():
+    sum_value = session.get('sum', 0)
     order_list_size = len(order_list)
-    return render_template('cart.html', orders = order_list, order_list_size = order_list_size)
+    return render_template('cart.html', orders = order_list, order_list_size = order_list_size, sum=sum_value)
 
 # Grabbing from html and adding it into the cart
 @app.post('/add_to_cart')
 def to_cart():
     product_name = request.form.get('product_name', None)
-    print(product_name)
     price = items.get(product_name)
+
     if price is not None:
-            order_list.append({'product': product_name, 'price': price})
+        order_list.append({'product': product_name, 'price': price})
+        session['sum'] = session.get('sum',0) + price
     return redirect(url_for('cart'))

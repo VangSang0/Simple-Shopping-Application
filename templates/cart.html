@@ -20,14 +20,19 @@
             <table>
                 <tr>
                     <th>Product</th>
-                    <th>Total Price</th>
+                    <th>Unit Price</th>
                     <th></th>
                 </tr>
                 {% for order in orders %}
+                <tr>
                         <td>{{ order['product'].capitalize() }}</td>
                         <td>{{ '${:,.2f}'.format(order['price']) }}</td>
-                    </tr>
+                </tr>
                 {% endfor %}
+                <tr>
+                    <td>Total</td>
+                    <td>{{ '${:,.2f}'.format(sum) }}</td>
+                </tr>
             </table>
         {% endif %}
     </div>
