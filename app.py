@@ -29,17 +29,17 @@ def home():
 
 @app.get('/cart')
 def cart():
-    sum_value = session.get('sum', 0)
     order_list_size = len(order_list)
-    return render_template('cart.html', orders = order_list, order_list_size = order_list_size, sum=sum_value)
+    return render_template('cart.html', orders = order_list, order_list_size = order_list_size, sum=total_price)
 
 # Grabbing from html and adding it into the cart
 @app.post('/add_to_cart')
 def to_cart():
+    global total_price 
     product_name = request.form.get('product_name', None)
     price = items.get(product_name)
 
     if price is not None:
         order_list.append({'product': product_name, 'price': price})
-        session['sum'] = session.get('sum',0) + price
+        total_price = sum(item['price'] for item in order_list)
     return redirect(url_for('cart'))
