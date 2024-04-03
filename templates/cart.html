@@ -28,6 +28,11 @@
                         <td>{{ order['product'].capitalize() }}</td>
                         <td>PlaceHolder</td>
                         <td>{{ '${:,.2f}'.format(order['price']) }}</td>
+                        <td>
+                            <form action="/remove_from_cart" method="POST">
+                                <button name="delete" value="{{ order['product'] }}">Delete</button>
+                            </form>
+                        </td>
                 </tr>
                 {% endfor %}
                 <tr class="cart-total">

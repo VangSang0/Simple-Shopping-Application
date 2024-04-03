@@ -29,7 +29,9 @@ def home():
 
 @app.get('/cart')
 def cart():
+    global total_price
     order_list_size = len(order_list)
+    total_price = sum(item['price'] for item in order_list)
     return render_template('cart.html', orders = order_list, order_list_size = order_list_size, sum=total_price)
 
 # Grabbing from html and adding it into the cart
@@ -41,5 +43,12 @@ def to_cart():
 
     if price is not None:
         order_list.append({'product': product_name, 'price': price})
-        total_price = sum(item['price'] for item in order_list)
+    return redirect(url_for('cart'))
+
+# Removing from the cart
+@app.post('/remove_from_cart')
+def remove_from_cart():
+    if request.form.get('delete'):
+        product_name = request.form.get('delete')
+        order_list[:] = [item for item in order_list if item['product'] != product_name]
     return redirect(url_for('cart'))
