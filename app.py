@@ -1,30 +1,17 @@
 from flask import Flask, render_template, request, redirect, url_for, session
+from dotenv import load_dotenv
+from repository import shopping_repo
+load_dotenv()
+
 
 app = Flask(__name__)
-app.secret_key = 'your_secret_key'
-
-items = {
-    'Beginning PC' : 849.99,
-    'Mid-Tier PC' : 1199.99,
-    'High-End PC' : 1599.99,
-
-    'Kevins Tool-Kit' : 7.99,
-    'Larrys Tool-Kit' : 35.99,
-    'Fanttik Tool Set' : 67.99,
-
-    'Keychron K2' : 74.99,
-    'Razor Mouse' : 21.99,
-    'Classic mousepad' : 14.99
-}
-
 
 order_list =[]
 
 
-
 @app.get('/')
 def home():
-    
+
     return render_template('index.html')
 
 @app.get('/cart')
@@ -38,8 +25,10 @@ def cart():
 @app.post('/add_to_cart')
 def to_cart():
     global total_price 
-    product_name = request.form.get('product_name', None)
-    price = items.get(product_name)
+    product_request = request.form.get('product_name', None)
+    product = shopping_repo.get_product(product_request)
+    product_name = product.get('name')
+    price = product.get('price')
 
     if price is not None:
         order_list.append({'product': product_name, 'price': price})
