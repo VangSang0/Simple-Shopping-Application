@@ -2,10 +2,10 @@
 A web application that emulates an online shopping experience.
 
 # Motivation
-Applying what I learned in class by creating a project outside of class.
+Applying what I learned in class, in attempts, to explore different types of applications that have been used before.
 
 # Tech Stack/Programming languages
- - Main : Python- Flask
+ - Main: Python- Flask
  - Others: HTML, CSS
  - Database: PostgreSQL
 
