@@ -4,6 +4,11 @@ A web application that emulates an online shopping experience.
 # Motivation
 Applying what I learned in class by creating a project outside of class.
 
+# Tech Stack/Programming languages
+ - Main : Python- Flask
+ - Others: HTML, CSS
+ - Database: PostgreSQL
+
 # Build Details
 
 I started with the homepage to visualize how everything would fall into place:
